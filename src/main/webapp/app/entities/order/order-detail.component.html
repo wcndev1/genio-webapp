@@ -1,0 +1,70 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="order">
+            <h2><span jhiTranslate="genioWebppApp.order.detail.title">Order</span> {{ order.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="genioWebppApp.order.orderId">Order Id</span></dt>
+                <dd>
+                    <span>{{ order.orderId }}</span>
+                </dd>
+                <dt><span jhiTranslate="genioWebppApp.order.orderCode">Order Code</span></dt>
+                <dd>
+                    <span>{{ order.orderCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="genioWebppApp.order.custId">Cust Id</span></dt>
+                <dd>
+                    <span>{{ order.custId }}</span>
+                </dd>
+                <dt><span jhiTranslate="genioWebppApp.order.productId">Product Id</span></dt>
+                <dd>
+                    <span>{{ order.productId }}</span>
+                </dd>
+                <dt><span jhiTranslate="genioWebppApp.order.startDate">Start Date</span></dt>
+                <dd>
+                    <span>{{ order.startDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="genioWebppApp.order.endDate">End Date</span></dt>
+                <dd>
+                    <span>{{ order.endDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="genioWebppApp.order.activeFlag">Active Flag</span></dt>
+                <dd>
+                    <span>{{ order.activeFlag }}</span>
+                </dd>
+                <dt><span jhiTranslate="genioWebppApp.order.createDate">Create Date</span></dt>
+                <dd>
+                    <span>{{ order.createDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="genioWebppApp.order.createBy">Create By</span></dt>
+                <dd>
+                    <span>{{ order.createBy }}</span>
+                </dd>
+                <dt><span jhiTranslate="genioWebppApp.order.updateDate">Update Date</span></dt>
+                <dd>
+                    <span>{{ order.updateDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="genioWebppApp.order.updateBy">Update By</span></dt>
+                <dd>
+                    <span>{{ order.updateBy }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/order', order.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
